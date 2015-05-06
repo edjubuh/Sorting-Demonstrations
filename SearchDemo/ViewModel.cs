@@ -14,6 +14,8 @@ namespace SearchDemo
         {
             Algorithms = new ObservableCollection<Algorithm>();
             Algorithms.Add(new SelectionSort());
+            Algorithms.Add(new InsertionSort());
+            Algorithms.Add(new MergeSort());
             SelectedAlgorithm = Algorithms[0];
             Randomize(null);
         }
@@ -90,14 +92,15 @@ namespace SearchDemo
 
         private async void Execute(object obj)
         {
-            selectedAlgorithm.StepExecuted = selectedAlgorithm_StepExecuted;
+            SelectedAlgorithm.StepExecuted = selectedAlgorithm_StepExecuted;
             ObservableCollection<int> quick = new ObservableCollection<int>(Integers);
-            await selectedAlgorithm.Execute(Integers);
-            selectedAlgorithm.StepExecuted = null;
+            await SelectedAlgorithm.Execute(Integers);
+            SelectedAlgorithm.StepExecuted = null;
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            var task = selectedAlgorithm.Execute(quick);
+            var task = SelectedAlgorithm.Execute(quick);
             stopwatch.Stop();
+            Debug.WriteLine(stopwatch.ElapsedMilliseconds);
         }
 
         private async Task selectedAlgorithm_StepExecuted()
