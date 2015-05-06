@@ -64,6 +64,7 @@
     <Compile Include="SortAlgorithms\Algorithm.cs" />
     <Compile Include="SortAlgorithms\InsertionSort.cs" />
     <Compile Include="SortAlgorithms\MergeSort.cs" />
+    <Compile Include="SortAlgorithms\QuickSort.cs" />
     <Compile Include="SortAlgorithms\SelectionSort.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">

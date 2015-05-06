@@ -14,7 +14,7 @@ namespace SearchDemo
         {
             Algorithms = new ObservableCollection<Algorithm>();
             Algorithms.Add(new SelectionSort());
-            Algorithms.Add(new InsertionSort());
+            Algorithms.Add(new QuickSort());
             Algorithms.Add(new MergeSort());
             SelectedAlgorithm = Algorithms[0];
             Randomize(null);
